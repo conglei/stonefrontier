@@ -27,7 +27,7 @@ export default function Page() {
         />
       </div>
       <div className="relative z-10 pointer-events-auto">
-      <section className="hero relative mx-auto flex min-h-screen max-w-5xl flex-col justify-start px-6 sm:px-10 lg:px-0 pt-40">
+      <section className="hero relative mx-auto flex min-h-screen max-w-5xl flex-col justify-start px-6 sm:px-10 lg:px-0 pt-52">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
