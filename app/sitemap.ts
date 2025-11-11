@@ -1,7 +1,7 @@
 import { getNewsPosts } from 'app/news/utils'
 import { getLearnArticles } from 'app/learn/utils'
 
-export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://suminos.ai'
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://stonefrontier.ai'
 
 export const dynamic = 'force-static'
 

@@ -1,19 +1,22 @@
 import './global.css'
 import type { Metadata } from 'next'
-import { Inter, Roboto_Mono, Merriweather } from 'next/font/google'
+import { Inter, Merriweather } from 'next/font/google'
 import { LandingHeader } from './components/LandingHeader'
-import { DEFAULT_FONT } from './font-config'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const robotoMono = Roboto_Mono({ subsets: ['latin'], variable: '--font-roboto-mono' })
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-inter',
+  weight: ['400', '500'], // Only regular and medium weights, no bold
+  display: 'swap'
+})
 const merriweather = Merriweather({ 
   subsets: ['latin'], 
   variable: '--font-merriweather',
   weight: ['300', '400', '700', '900']
 })
 
-const defaultFontVariable = DEFAULT_FONT === 'roboto-mono' ? '--font-roboto-mono' : '--font-inter'
-const defaultFontFamily = DEFAULT_FONT === 'roboto-mono' ? "'Roboto Mono', monospace" : "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+const defaultFontVariable = '--font-inter'
+const defaultFontFamily = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
@@ -23,27 +26,22 @@ import { PostHogProvider } from './components/PostHogProvider'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Suminos - Your AI-Powered Job Hunting Companion',
-    template: '%s | Suminos',
+    default: 'StoneFrontier — Calm AI Studio',
+    template: '%s | StoneFrontier',
   },
-  description: 'Refine your resume, discover opportunities, apply smarter, and prepare with confidence. The complete AI-powered job hunting platform.',
+  description: 'StoneFrontier builds calm, contextual AI that supports human thinking, decision making, and day-to-day work.',
   keywords: [
-    'job hunting',
-    'resume optimization',
-    'AI resume',
-    'job search',
-    'career development',
-    'interview preparation',
-    'job application tracker',
-    'AI job matching',
-    'resume review',
-    'career advice',
-    'job opportunities',
-    'resume builder',
+    'StoneFrontier',
+    'AI studio',
+    'calm technology',
+    'human-centered AI',
+    'Suminos',
+    'product studio',
+    'decision intelligence',
   ],
-  authors: [{ name: 'Suminos Team' }],
-  creator: 'Suminos',
-  publisher: 'Suminos',
+  authors: [{ name: 'Conglei Shi' }],
+  creator: 'StoneFrontier',
+  publisher: 'StoneFrontier',
   icons: {
     icon: [
       { url: '/images/icon.ico', sizes: 'any' },
@@ -54,27 +52,27 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Suminos - Your AI-Powered Job Hunting Companion',
-    description: 'Refine your resume, discover opportunities, apply smarter, and prepare with confidence. The complete AI-powered job hunting platform.',
+    title: 'StoneFrontier — Calm AI Studio',
+    description: 'StoneFrontier builds calm, contextual AI that supports human thinking and decision making.',
     url: baseUrl,
-    siteName: 'Suminos',
+    siteName: 'StoneFrontier',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: `${baseUrl}/og?title=${encodeURIComponent('Suminos - Your AI-Powered Job Hunting Companion')}`,
+        url: `${baseUrl}/og?title=${encodeURIComponent('StoneFrontier — Calm AI Studio')}`,
         width: 1200,
         height: 630,
-        alt: 'Suminos - AI-Powered Job Hunting Companion',
+        alt: 'StoneFrontier — Calm AI Studio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Suminos - Your AI-Powered Job Hunting Companion',
-    description: 'Refine your resume, discover opportunities, apply smarter, and prepare with confidence.',
-    images: [`${baseUrl}/og?title=${encodeURIComponent('Suminos - Your AI-Powered Job Hunting Companion')}`],
-    creator: '@suminos',
+    title: 'StoneFrontier — Calm AI Studio',
+    description: 'Calm, contextual AI products that keep people in control.',
+    images: [`${baseUrl}/og?title=${encodeURIComponent('StoneFrontier — Calm AI Studio')}`],
+    creator: '@stonefrontier',
   },
   robots: {
     index: true,
@@ -105,14 +103,13 @@ export default function RootLayout({
         className={cx(
           'text-black dark:text-white',
           inter.variable,
-          robotoMono.variable,
           merriweather.variable
         )}
       >
-        <body className="antialiased bg-[#FBFAFB] dark:bg-[#0f172a]" style={{ fontFamily: `var(${defaultFontVariable}), ${defaultFontFamily}` }}>
+        <body className="antialiased bg-[#0C0C0C]" style={{ fontFamily: `var(${defaultFontVariable}), ${defaultFontFamily}` }}>
         <PostHogProvider>
           <LandingHeader />
-          <main className="min-h-screen pt-20 bg-[#FBFAFB] dark:bg-[#0f172a]">
+          <main className="min-h-screen pt-20 bg-[#0C0C0C]">
             {children}
             <Footer />
             <Analytics />

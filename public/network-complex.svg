@@ -1,0 +1,499 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow filter for nodes -->
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1.5 0" result="glow"/>
+      <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+    </filter>
+    
+    <!-- Shadow filter for depth -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur"/>
+      <feOffset in="blur" dx="0.5" dy="0.5" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Glow filter for connections -->
+    <filter id="connectionGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1.2 0" result="glow"/>
+      <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Network nodes and connections - non-symmetrical, organic structure -->
+  <!-- Main cluster nodes -->
+  <circle cx="180" cy="120" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="320" cy="180" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="450" cy="140" r="3.5" fill="#0C0C0C" opacity="0.45" filter="url(#nodeGlow)"/>
+  <circle cx="580" cy="200" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="720" cy="160" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="850" cy="220" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="980" cy="180" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="1100" cy="240" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  
+  <!-- Secondary cluster -->
+  <circle cx="150" cy="280" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="280" cy="320" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="420" cy="300" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="550" cy="360" r="3.5" fill="#0C0C0C" opacity="0.45" filter="url(#nodeGlow)"/>
+  <circle cx="680" cy="340" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="820" cy="380" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="950" cy="340" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="1080" cy="400" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  
+  <!-- Tertiary cluster -->
+  <circle cx="200" cy="480" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="350" cy="520" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="500" cy="500" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="650" cy="560" r="3.5" fill="#0C0C0C" opacity="0.45" filter="url(#nodeGlow)"/>
+  <circle cx="800" cy="540" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="950" cy="600" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="1100" cy="580" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  
+  <!-- Upper region nodes -->
+  <circle cx="100" cy="60" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="250" cy="40" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="400" cy="80" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="600" cy="50" r="3" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="750" cy="90" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="900" cy="70" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="1050" cy="100" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  
+  <!-- Lower region nodes -->
+  <circle cx="120" cy="680" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="300" cy="720" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="480" cy="700" r="3" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="660" cy="740" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="840" cy="720" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="1020" cy="760" r="3" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  
+  <!-- Right side extended nodes -->
+  <circle cx="1120" cy="320" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="1150" cy="480" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="1180" cy="640" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional intermediate nodes - Main cluster -->
+  <circle cx="250" cy="150" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="385" cy="160" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="515" cy="170" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="650" cy="180" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="785" cy="190" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="915" cy="200" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="1040" cy="210" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional intermediate nodes - Secondary cluster -->
+  <circle cx="215" cy="300" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="350" cy="310" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="485" cy="330" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="615" cy="350" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="750" cy="360" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="885" cy="360" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="1015" cy="370" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional intermediate nodes - Tertiary cluster -->
+  <circle cx="275" cy="500" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="425" cy="510" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="575" cy="530" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="725" cy="550" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  <circle cx="875" cy="570" r="2" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="1025" cy="590" r="2.5" fill="#0C0C0C" opacity="0.32" filter="url(#nodeGlow)"/>
+  
+  <!-- Middle region nodes -->
+  <circle cx="140" cy="400" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="240" cy="420" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="380" cy="440" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="520" cy="430" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="660" cy="450" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="800" cy="460" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="940" cy="470" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="1070" cy="490" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  
+  <!-- Left side extended nodes -->
+  <circle cx="50" cy="200" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  <circle cx="60" cy="400" r="2.5" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="70" cy="600" r="2" fill="#0C0C0C" opacity="0.25" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional upper region nodes -->
+  <circle cx="175" cy="80" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="325" cy="60" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="475" cy="65" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="675" cy="70" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="825" cy="80" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="975" cy="85" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional lower region nodes -->
+  <circle cx="210" cy="650" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="360" cy="680" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="510" cy="690" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="710" cy="700" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  <circle cx="860" cy="710" r="2" fill="#0C0C0C" opacity="0.22" filter="url(#nodeGlow)"/>
+  <circle cx="990" cy="740" r="2.5" fill="#0C0C0C" opacity="0.28" filter="url(#nodeGlow)"/>
+  
+  <!-- Connections - organic, non-symmetrical paths -->
+  <!-- Main cluster connections -->
+  <path d="M 180,120 L 320,180" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 320,180 L 450,140" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 450,140 L 580,200" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 580,200 L 720,160" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 720,160 L 850,220" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 850,220 L 980,180" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 980,180 L 1100,240" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Cross-cluster connections -->
+  <path d="M 180,120 L 150,280" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 320,180 L 280,320" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 450,140 L 420,300" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 580,200 L 550,360" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 720,160 L 680,340" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 850,220 L 820,380" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 980,180 L 950,340" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1100,240 L 1080,400" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Secondary cluster connections -->
+  <path d="M 150,280 L 280,320" stroke="#0C0C0C" stroke-width="0.7" opacity="0.18" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 280,320 L 420,300" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 420,300 L 550,360" stroke="#0C0C0C" stroke-width="0.7" opacity="0.18" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 550,360 L 680,340" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 680,340 L 820,380" stroke="#0C0C0C" stroke-width="0.7" opacity="0.18" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 820,380 L 950,340" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 950,340 L 1080,400" stroke="#0C0C0C" stroke-width="0.7" opacity="0.18" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Tertiary cluster connections -->
+  <path d="M 200,480 L 350,520" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 350,520 L 500,500" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 500,500 L 650,560" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 650,560 L 800,540" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,540 L 950,600" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 950,600 L 1100,580" stroke="#0C0C0C" stroke-width="0.8" opacity="0.2" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Vertical connections between clusters -->
+  <path d="M 280,320 L 350,520" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 550,360 L 500,500" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 820,380 L 800,540" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1080,400 L 1100,580" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Upper region connections -->
+  <path d="M 100,60 L 250,40" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 250,40 L 400,80" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 400,80 L 600,50" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 600,50 L 750,90" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 750,90 L 900,70" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 900,70 L 1050,100" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Connections from upper to main cluster -->
+  <path d="M 250,40 L 180,120" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 400,80 L 450,140" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 600,50 L 720,160" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 900,70 L 980,180" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Lower region connections -->
+  <path d="M 120,680 L 300,720" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 300,720 L 480,700" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 480,700 L 660,740" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 660,740 L 840,720" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 840,720 L 1020,760" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Connections from tertiary to lower cluster -->
+  <path d="M 350,520 L 300,720" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 650,560 L 660,740" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 950,600 L 1020,760" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Right side extended connections -->
+  <path d="M 1100,240 L 1120,320" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1080,400 L 1150,480" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1100,580 L 1180,640" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1120,320 L 1150,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1150,480 L 1180,640" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Diagonal cross-connections for depth -->
+  <path d="M 180,120 L 420,300" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 450,140 L 680,340" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 720,160 L 950,340" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 280,320 L 500,500" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 550,360 L 800,540" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional intermediate connections - Main cluster -->
+  <path d="M 180,120 L 250,150" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 250,150 L 320,180" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 320,180 L 385,160" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 385,160 L 450,140" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 450,140 L 515,170" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 515,170 L 580,200" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 580,200 L 650,180" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 650,180 L 720,160" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 720,160 L 785,190" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 785,190 L 850,220" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 850,220 L 915,200" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 915,200 L 980,180" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 980,180 L 1040,210" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1040,210 L 1100,240" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional intermediate connections - Secondary cluster -->
+  <path d="M 150,280 L 215,300" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 215,300 L 280,320" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 280,320 L 350,310" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 350,310 L 420,300" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 420,300 L 485,330" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 485,330 L 550,360" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 550,360 L 615,350" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 615,350 L 680,340" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 680,340 L 750,360" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 750,360 L 820,380" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 820,380 L 885,360" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 885,360 L 950,340" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 950,340 L 1015,370" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1015,370 L 1080,400" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional intermediate connections - Tertiary cluster -->
+  <path d="M 200,480 L 275,500" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 275,500 L 350,520" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 350,520 L 425,510" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 425,510 L 500,500" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 500,500 L 575,530" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 575,530 L 650,560" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 650,560 L 725,550" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 725,550 L 800,540" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,540 L 875,570" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 875,570 L 950,600" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 950,600 L 1025,590" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1025,590 L 1100,580" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Middle region connections -->
+  <path d="M 140,400 L 240,420" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 240,420 L 380,440" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 380,440 L 520,430" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 520,430 L 660,450" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 660,450 L 800,460" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,460 L 940,470" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 940,470 L 1070,490" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Cross-connections from middle region to clusters -->
+  <path d="M 240,420 L 280,320" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 240,420 L 350,520" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 520,430 L 550,360" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 520,430 L 500,500" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,460 L 820,380" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,460 L 800,540" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1070,490 L 1080,400" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1070,490 L 1100,580" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Left side connections -->
+  <path d="M 50,200 L 100,60" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 50,200 L 180,120" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 50,200 L 150,280" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 60,400 L 140,400" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 60,400 L 200,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 70,600 L 120,680" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 70,600 L 200,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional upper region connections -->
+  <path d="M 100,60 L 175,80" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 175,80 L 250,40" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 250,40 L 325,60" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 325,60 L 400,80" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 400,80 L 475,65" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 475,65 L 600,50" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 600,50 L 675,70" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 675,70 L 750,90" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 750,90 L 825,80" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 825,80 L 900,70" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 900,70 L 975,85" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 975,85 L 1050,100" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional lower region connections -->
+  <path d="M 120,680 L 210,650" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 210,650 L 300,720" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 300,720 L 360,680" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 360,680 L 480,700" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 480,700 L 510,690" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 510,690 L 660,740" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 660,740 L 710,700" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 710,700 L 840,720" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 840,720 L 860,710" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 860,710 L 1020,760" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1020,760 L 990,740" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional diagonal cross-connections -->
+  <path d="M 250,150 L 485,330" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 385,160 L 615,350" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 515,170 L 750,360" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 650,180 L 885,360" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 785,190 L 1015,370" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 215,300 L 425,510" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 350,310 L 575,530" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 485,330 L 725,550" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 615,350 L 875,570" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 750,360 L 1025,590" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 240,420 L 450,140" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 520,430 L 720,160" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 800,460 L 980,180" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 1070,490 L 1100,240" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional complex network nodes from reference graph -->
+  <!-- Transformed coordinates to fit 1200x800 viewBox -->
+  <circle cx="528" cy="641" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="521" cy="743" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="436" cy="681" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="627" cy="627" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="620" cy="727" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="689" cy="347" r="3.5" fill="#0C0C0C" opacity="0.45" filter="url(#nodeGlow)"/>
+  <circle cx="783" cy="380" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="669" cy="249" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="765" cy="280" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="578" cy="290" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="618" cy="163" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="526" cy="98" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="705" cy="84" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="739" cy="178" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="612" cy="46" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="426" cy="217" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="524" cy="198" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="417" cy="116" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="411" cy="316" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="334" cy="176" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="340" cy="386" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="245" cy="41" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="265" cy="457" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="316" cy="288" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="357" cy="495" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="527" cy="386" r="3" fill="#0C0C0C" opacity="0.4" filter="url(#nodeGlow)"/>
+  <circle cx="502" cy="495" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="441" cy="288" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="331" cy="27" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="431" cy="533" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="358" cy="657" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="448" cy="458" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="557" cy="458" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="498" cy="358" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="649" cy="459" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="771" cy="481" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="710" cy="559" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="858" cy="639" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="748" cy="639" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="638" cy="639" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="598" cy="559" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  <circle cx="438" cy="480" r="2.5" fill="#0C0C0C" opacity="0.35" filter="url(#nodeGlow)"/>
+  <circle cx="398" cy="388" r="2" fill="#0C0C0C" opacity="0.3" filter="url(#nodeGlow)"/>
+  
+  <!-- Additional complex network connections from reference graph -->
+  <path d="M 528,641 L 689,347" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 521,743 L 528,641" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 436,681 L 528,641" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 627,627 L 528,641" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 620,727 L 528,641" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 618,163" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 783,380 L 689,347" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 669,249 L 689,347" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 765,280 L 689,347" stroke="#0C0C0C" stroke-width="0.6" opacity="0.15" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 578,290 L 689,347" stroke="#0C0C0C" stroke-width="0.5" opacity="0.12" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 618,163 L 612,46" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 526,98 L 618,163" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 705,84 L 618,163" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 739,178 L 618,163" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 426,217 L 528,641" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 524,198 L 426,217" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 417,116 L 426,217" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 411,316 L 426,217" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 334,176 L 426,217" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 340,386 L 426,217" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 245,41 L 340,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 265,457 L 340,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 316,288 L 340,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 357,495 L 340,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 340,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 502,495 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 441,288 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 331,27 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 431,533 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 358,657 L 431,533" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 431,533" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 448,458" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 498,358 L 557,458" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 649,459 L 557,458" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 771,481 L 649,459" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 710,559 L 771,481" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 858,639 L 710,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 748,639 L 858,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 638,639 L 748,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 598,559 L 638,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 438,480 L 598,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 398,388 L 438,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 448,458" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 498,358" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 598,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 438,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 638,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 748,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 649,459 L 858,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 771,481 L 710,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 627,627" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 720,160" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 980,180" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 1100,240" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 437,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 627,627" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  
+  <!-- Additional cross-connections for increased complexity -->
+  <path d="M 527,386 L 426,217" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 340,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 431,533" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 358,657" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 557,458" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 649,459" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 771,481" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 527,386 L 710,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 527,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 557,458" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 431,533" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 358,657" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 528,641" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 448,458 L 436,681" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 649,459" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 771,481" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 710,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 557,458 L 527,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 649,459 L 771,481" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 649,459 L 710,559" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 649,459 L 858,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 771,481 L 710,559" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 771,481 L 858,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 710,559 L 858,639" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 710,559 L 748,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 710,559 L 638,639" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 598,559 L 710,559" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 598,559 L 438,480" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 438,480 L 448,458" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 438,480 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 438,480 L 398,388" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 398,388 L 340,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 398,388 L 527,386" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 340,386 L 426,217" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 340,386 L 265,457" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 340,386 L 316,288" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 340,386 L 357,495" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 426,217 L 524,198" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 426,217 L 417,116" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 426,217 L 411,316" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 426,217 L 334,176" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 528,641 L 627,627" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 528,641 L 436,681" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 528,641 L 620,727" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 528,641 L 521,743" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 527,386" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 618,163" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 783,380" stroke="#0C0C0C" stroke-width="0.4" opacity="0.1" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 669,249" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 765,280" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 689,347 L 578,290" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 618,163 L 526,98" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 618,163 L 705,84" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 618,163 L 739,178" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+  <path d="M 618,163 L 612,46" stroke="#0C0C0C" stroke-width="0.3" opacity="0.08" fill="none" filter="url(#connectionGlow)"/>
+</svg>

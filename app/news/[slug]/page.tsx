@@ -168,7 +168,7 @@ export default async function NewsDetail({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+            <h1 className="text-4xl font-medium text-[#1a1a1a] mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               {post.metadata.title}
             </h1>
 
@@ -179,7 +179,7 @@ export default async function NewsDetail({ params }) {
 
             {/* Content */}
             <div 
-              className="prose prose-slate max-w-none mb-12 prose-lg prose-headings:font-semibold prose-p:leading-relaxed prose-p:text-[#1a1a1a] prose-p:text-base prose-p:mb-6 prose-headings:text-[#1a1a1a] prose-headings:mb-4 prose-headings:mt-8 prose-a:text-[#0060F3] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#1a1a1a] prose-strong:font-semibold prose-ul:text-base prose-ol:text-base prose-li:text-[#1a1a1a] prose-li:mb-2 prose-blockquote:border-l-[#0060F3] prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:pr-4 prose-blockquote:py-4 prose-blockquote:my-6 prose-blockquote:bg-[#f9fafb] prose-blockquote:not-italic prose-blockquote:text-[#1a1a1a] prose-blockquote:text-base prose-code:text-sm prose-code:bg-[#f3f4f6] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-[#1a1a1a] prose-pre:text-white"
+              className="prose prose-slate max-w-none mb-12 prose-lg prose-headings:font-medium prose-p:leading-relaxed prose-p:text-[#1a1a1a] prose-p:text-base prose-p:mb-6 prose-headings:text-[#1a1a1a] prose-headings:mb-4 prose-headings:mt-8 prose-a:text-[#0060F3] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#1a1a1a] prose-strong:font-medium prose-ul:text-base prose-ol:text-base prose-li:text-[#1a1a1a] prose-li:mb-2 prose-blockquote:border-l-[#0060F3] prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:pr-4 prose-blockquote:py-4 prose-blockquote:my-6 prose-blockquote:bg-[#f9fafb] prose-blockquote:not-italic prose-blockquote:text-[#1a1a1a] prose-blockquote:text-base prose-code:text-sm prose-code:bg-[#f3f4f6] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-[#1a1a1a] prose-pre:text-white"
               style={{ fontFamily: "var(--font-merriweather), 'Merriweather', Georgia, serif" }}
             >
               <CustomMDX source={post.content} />

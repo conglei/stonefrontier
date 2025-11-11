@@ -6,17 +6,17 @@ import { baseUrl } from 'app/sitemap'
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Legal Documents | StoneFrontier',
-    description: 'Legal documents including privacy policy and terms of service for our job-hunting companion product, Suminos.',
+    description: 'Legal documents including privacy policy and terms of service for the StoneFrontier website.',
     openGraph: {
       title: 'Legal Documents | StoneFrontier',
-      description: 'Legal documents including privacy policy and terms of service for our job-hunting companion product, Suminos.',
+      description: 'Legal documents including privacy policy and terms of service for the StoneFrontier website.',
       type: 'website',
       url: `${baseUrl}/legal`,
     },
     twitter: {
       card: 'summary',
       title: 'Legal Documents | StoneFrontier',
-      description: 'Legal documents including privacy policy and terms of service for our job-hunting companion product, Suminos.',
+      description: 'Legal documents including privacy policy and terms of service for the StoneFrontier website.',
     },
   }
 }
@@ -32,7 +32,7 @@ export default function LegalPage() {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+            <h1 className="text-2xl font-medium text-slate-900 dark:text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
               No Legal Documents Found
             </h1>
             <p className="text-slate-600 dark:text-slate-300">
@@ -51,11 +51,11 @@ export default function LegalPage() {
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          <h1 className="text-3xl font-medium text-slate-900 dark:text-white mb-4" style={{ letterSpacing: '-0.02em' }}>
             Legal Documents
           </h1>
           <p className="text-slate-600 dark:text-slate-300">
-            Important legal information for using our job-hunting companion product, Suminos.
+            Important legal information for using the StoneFrontier website.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function LegalPage() {
             <article key={doc.slug} className="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden">
               <div className="px-8 py-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                  <h2 className="text-xl font-medium text-slate-900 dark:text-white" style={{ letterSpacing: '-0.02em' }}>
                     {doc.metadata.title}
                   </h2>
                   <a

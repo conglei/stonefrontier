@@ -9,6 +9,7 @@ interface FadeInUpProps {
   duration?: number;
   className?: string;
   once?: boolean;
+  distance?: number;
 }
 
 export default function FadeInUp({ 
@@ -16,11 +17,12 @@ export default function FadeInUp({
   delay = 0, 
   duration = 0.6, 
   className = '',
-  once = true 
+  once = true,
+  distance = 30
 }: FadeInUpProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: distance }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: "-100px" }}
       transition={{ 

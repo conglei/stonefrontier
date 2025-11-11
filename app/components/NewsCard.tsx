@@ -55,7 +55,7 @@ export function NewsCard({ post }: NewsCardProps) {
           <span className="whitespace-nowrap">{formatDate(post.metadata.publishedAt)}</span>
         </div>
         
-        <h3 className="text-xl font-semibold text-[#1a1a1a] dark:text-white mb-3 group-hover:opacity-80 transition-opacity duration-200 line-clamp-2">
+        <h3 className="text-xl font-medium text-[#1a1a1a] dark:text-white mb-3 group-hover:opacity-80 transition-opacity duration-200 line-clamp-2" style={{ letterSpacing: '-0.02em' }}>
           {post.metadata.title}
         </h3>
         

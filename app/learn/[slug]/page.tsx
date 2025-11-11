@@ -220,7 +220,7 @@ export default async function LearnArticleDetail({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl font-bold text-[#1a1a1a] dark:text-white mb-6 leading-tight">
+            <h1 className="text-4xl font-medium text-[#1a1a1a] dark:text-white mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
               {article.metadata.title}
             </h1>
 
@@ -245,7 +245,7 @@ export default async function LearnArticleDetail({ params }) {
 
             {/* Content */}
             <div 
-              className="prose prose-slate dark:prose-invert max-w-none mb-12 prose-lg prose-headings:font-semibold prose-p:leading-relaxed prose-p:text-[#1a1a1a] dark:prose-p:text-slate-200 prose-p:text-base prose-p:mb-6 prose-headings:text-[#1a1a1a] dark:prose-headings:text-white prose-headings:mb-4 prose-headings:mt-8 prose-a:text-[#0060F3] dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-[#1a1a1a] dark:prose-strong:text-slate-200 prose-strong:font-semibold prose-ul:text-base prose-ol:text-base prose-li:text-[#1a1a1a] dark:prose-li:text-slate-300 prose-li:mb-2 prose-blockquote:border-l-[#0060F3] dark:prose-blockquote:border-l-blue-500 prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:pr-4 prose-blockquote:py-4 prose-blockquote:my-6 prose-blockquote:bg-[#f9fafb] dark:prose-blockquote:bg-slate-900 prose-blockquote:not-italic prose-blockquote:text-[#1a1a1a] dark:prose-blockquote:text-slate-200 prose-blockquote:text-base prose-code:text-sm prose-code:bg-[#f3f4f6] dark:prose-code:bg-slate-700 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[#1a1a1a] dark:prose-code:text-slate-200 prose-pre:bg-[#1a1a1a] dark:prose-pre:bg-slate-900 prose-pre:text-white dark:prose-pre:text-slate-200"
+              className="prose prose-slate dark:prose-invert max-w-none mb-12 prose-lg prose-headings:font-medium prose-p:leading-relaxed prose-p:text-[#1a1a1a] dark:prose-p:text-slate-200 prose-p:text-base prose-p:mb-6 prose-headings:text-[#1a1a1a] dark:prose-headings:text-white prose-headings:mb-4 prose-headings:mt-8 prose-a:text-[#0060F3] dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-[#1a1a1a] dark:prose-strong:text-slate-200 prose-strong:font-medium prose-ul:text-base prose-ol:text-base prose-li:text-[#1a1a1a] dark:prose-li:text-slate-300 prose-li:mb-2 prose-blockquote:border-l-[#0060F3] dark:prose-blockquote:border-l-blue-500 prose-blockquote:border-l-4 prose-blockquote:pl-6 prose-blockquote:pr-4 prose-blockquote:py-4 prose-blockquote:my-6 prose-blockquote:bg-[#f9fafb] dark:prose-blockquote:bg-slate-900 prose-blockquote:not-italic prose-blockquote:text-[#1a1a1a] dark:prose-blockquote:text-slate-200 prose-blockquote:text-base prose-code:text-sm prose-code:bg-[#f3f4f6] dark:prose-code:bg-slate-700 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[#1a1a1a] dark:prose-code:text-slate-200 prose-pre:bg-[#1a1a1a] dark:prose-pre:bg-slate-900 prose-pre:text-white dark:prose-pre:text-slate-200"
               style={{ fontFamily: "var(--font-merriweather), 'Merriweather', Georgia, serif" }}
             >
               <CustomMDX source={article.content} />
