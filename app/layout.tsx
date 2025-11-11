@@ -26,7 +26,7 @@ import { PostHogProvider } from './components/PostHogProvider'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'StoneFrontier — Calm AI Studio',
+    default: 'StoneFrontier',
     template: '%s | StoneFrontier',
   },
   description: 'StoneFrontier builds calm, contextual AI that supports human thinking, decision making, and day-to-day work.',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'StoneFrontier — Calm AI Studio',
+    title: 'StoneFrontier',
     description: 'StoneFrontier builds calm, contextual AI that supports human thinking and decision making.',
     url: baseUrl,
     siteName: 'StoneFrontier',
@@ -60,18 +60,18 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${baseUrl}/og?title=${encodeURIComponent('StoneFrontier — Calm AI Studio')}`,
+        url: `${baseUrl}/og?title=${encodeURIComponent('StoneFrontier')}`,
         width: 1200,
         height: 630,
-        alt: 'StoneFrontier — Calm AI Studio',
+        alt: 'StoneFrontier',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'StoneFrontier — Calm AI Studio',
+    title: 'StoneFrontier',
     description: 'Calm, contextual AI products that keep people in control.',
-    images: [`${baseUrl}/og?title=${encodeURIComponent('StoneFrontier — Calm AI Studio')}`],
+    images: [`${baseUrl}/og?title=${encodeURIComponent('StoneFrontier')}`],
     creator: '@stonefrontier',
   },
   robots: {
