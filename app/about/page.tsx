@@ -77,7 +77,7 @@ export default function AboutPage() {
                       <span>Website</span>
                     </a>
                     <a 
-                      href="https://www.linkedin.com/in/conglei" 
+                      href="https://www.linkedin.com/in/conglei-shi" 
                       target="_blank" 
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-[#8a8a8a] transition-colors hover:text-[#4E7DFF] no-underline group"
