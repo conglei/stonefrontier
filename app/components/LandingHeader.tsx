@@ -35,27 +35,35 @@ export function LandingHeader() {
         >
           StoneFrontier
         </Link>
-        <nav className="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.3em]">
+        <nav className="flex items-center gap-2 text-[11px] uppercase tracking-[0.3em]">
+          <div className="hidden sm:flex items-center gap-2">
+            <Link 
+              href="/#philosophy" 
+              onClick={(e) => handleNavClick(e, '/#philosophy')}
+              className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
+            >
+              Philosophy
+            </Link>
+            <Link 
+              href="/#products" 
+              onClick={(e) => handleNavClick(e, '/#products')}
+              className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
+            >
+              Work
+            </Link>
+            <Link 
+              href="/#contact" 
+              onClick={(e) => handleNavClick(e, '/#contact')}
+              className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
+            >
+              Contact
+            </Link>
+          </div>
           <Link 
-            href="/#philosophy" 
-            onClick={(e) => handleNavClick(e, '/#philosophy')}
-            className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
+            href="/about" 
+            className={`px-3 py-2 transition-colors hover:text-[#4E7DFF] ${pathname === '/about' ? 'text-white' : 'text-[#8a8a8a]'}`}
           >
-            Philosophy
-          </Link>
-          <Link 
-            href="/#products" 
-            onClick={(e) => handleNavClick(e, '/#products')}
-            className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
-          >
-            Work
-          </Link>
-          <Link 
-            href="/#contact" 
-            onClick={(e) => handleNavClick(e, '/#contact')}
-            className="px-3 py-2 text-[#8a8a8a] transition-colors hover:text-[#4E7DFF]"
-          >
-            Contact
+            About
           </Link>
         </nav>
       </div>
