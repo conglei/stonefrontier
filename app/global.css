@@ -1,0 +1,523 @@
+@import 'tailwindcss';
+
+/* Ensure all article content uses Merriweather font for better readability */
+.prose,
+.prose * {
+  font-family: var(--font-merriweather), 'Merriweather', Georgia, serif !important;
+}
+
+/* Hide horizontal rule separators in articles */
+.prose hr {
+  display: none;
+}
+
+/* Enhanced blockquote styling */
+.prose blockquote {
+  border-left: 4px solid #0060F3 !important;
+  background: #f9fafb !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0 0.375rem 0.375rem 0;
+  font-style: normal !important;
+  position: relative;
+}
+
+.prose blockquote p {
+  margin: 0 !important;
+  color: #1a1a1a !important;
+}
+
+.prose blockquote p:not(:last-child) {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Dark mode blockquote */
+.dark .prose blockquote {
+  background: #1e293b !important;
+}
+
+.dark .prose blockquote p {
+  color: #f1f5f9 !important;
+}
+
+/* Improved code block styling */
+.prose pre {
+  border-radius: 0.5rem !important;
+  padding: 1.25rem !important;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.prose code {
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  color: inherit;
+}
+
+/* Improved table styling */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose table th,
+.prose table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose table th,
+  .prose table td {
+    border-color: #374151;
+  }
+
+  .prose table th {
+    background: #1f2937;
+  }
+}
+
+.dark .prose table th,
+.dark .prose table td {
+  border-color: #374151;
+}
+
+.dark .prose table th {
+  background: #1f2937;
+}
+
+/* Better list spacing */
+.prose ul,
+.prose ol {
+  margin: 1.25rem 0;
+  padding-left: 1.75rem;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+  line-height: 1.75;
+}
+
+.prose li p {
+  margin: 0.5rem 0;
+}
+
+/* Improved link hover states */
+.prose a {
+  transition: all 0.2s ease;
+}
+
+/* Better image styling */
+.prose img {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Improved heading spacing */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h1:first-child,
+.prose h2:first-child,
+.prose h3:first-child,
+.prose h4:first-child {
+  margin-top: 0;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+::selection {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+  --sh-property: #e25a1c;
+  --sh-entity: #e25a1c;
+  
+  /* SaaS Color Palette - Based on logo #012173 */
+  --primary: #012173;
+  --primary-dark: #001a5c;
+  --primary-light: #1a3a8a;
+  --secondary: #059669;
+  --accent: #7c3aed;
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  --gradient-start: #012173;
+  --gradient-end: #1a3a8a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+    
+    /* Dark mode colors */
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+  }
+  html {
+    color-scheme: dark;
+  }
+}
+
+html {
+  min-width: 360px;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: #FBFAFB;
+  color: rgb(52, 52, 52);
+  overflow-x: hidden;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0f172a;
+    color: #f1f5f9;
+  }
+}
+
+h1, h2 {
+  font-family: 'BIZ UDP Mincho', serif;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}
+
+/* Modern SaaS Components */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-900 to-blue-800 hover:from-blue-800 hover:to-blue-700 dark:from-blue-600 dark:to-blue-500 dark:hover:from-blue-500 dark:hover:to-blue-400 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold py-3 px-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-200 shadow-sm hover:shadow-md;
+}
+
+.card {
+  @apply bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-all duration-300;
+}
+
+.feature-icon {
+  @apply w-12 h-12 rounded-xl bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center text-white;
+}
+
+.workflow-step {
+  @apply relative flex flex-col items-center text-center;
+}
+
+.workflow-step::after {
+  content: '';
+  @apply absolute top-6 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-900 to-blue-700 transform -translate-x-1/2;
+}
+
+.workflow-step:last-child::after {
+  @apply hidden;
+}
+
+@media (max-width: 768px) {
+  .workflow-step::after {
+    @apply hidden;
+  }
+}
+
+/* Hero Section Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hero Section Specific Styles */
+.hero-illustration {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 50%, #f3e8ff 100%);
+}
+
+.dark .hero-illustration {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.floating-element:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Custom Font Face */
+@font-face {
+  font-family: 'BIZ UDP Mincho';
+  src: url('/fonts/BIZUDPMincho-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Animations for Landing Page */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatHero {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(5deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-5deg);
+  }
+}
+
+/* Landing Page Custom Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.animate-float-hero {
+  animation: floatHero 20s ease-in-out infinite;
+}
+
+.animate-float-hero-reverse {
+  animation: floatHero 25s ease-in-out infinite reverse;
+}
+
+.feature-item-transition {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.feature-item-transition.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
