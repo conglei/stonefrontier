@@ -100,6 +100,7 @@ export default function RootLayout({
   return (
       <html
         lang="en"
+        suppressHydrationWarning
         className={cx(
           'text-black dark:text-white',
           inter.variable,

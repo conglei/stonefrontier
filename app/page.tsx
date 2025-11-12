@@ -97,8 +97,8 @@ export default function Page() {
             <ProductCard
               label="Current release"
               title="Suminos"
-              description="Your AI companion for job search and career moves."
-              details="Suminos helps you revise your resume, discover roles that fit, speed up applications with a browser companion under your control, track progress, and prep for interviews — all in one place."
+              description="StoneFrontier's vision applied to job search. You define your direction; AI expands context and possibility."
+              details="Suminos helps you revise your resume, discover roles that fit, speed up applications with a browser companion under your control, track progress, and prep for interviews. The system surfaces relevant opportunities and connects information across your search while you make the decisions that matter — all in one place."
               features={[]}
               link={{
                 href: 'https://suminos.ai',

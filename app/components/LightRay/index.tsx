@@ -105,10 +105,15 @@ const LightRays: React.FC<LightRaysProps> = ({
   const meshRef = useRef<Mesh | null>(null);
   const cleanupFunctionRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!containerRef.current || !isMounted) return;
 
     observerRef.current = new IntersectionObserver(
       entries => {
@@ -126,10 +131,10 @@ const LightRays: React.FC<LightRaysProps> = ({
         observerRef.current = null;
       }
     };
-  }, []);
+  }, [isMounted]);
 
   useEffect(() => {
-    if (!isVisible || !containerRef.current) return;
+    if (!isVisible || !containerRef.current || !isMounted) return;
 
     if (cleanupFunctionRef.current) {
       cleanupFunctionRef.current();
@@ -389,7 +394,8 @@ void main() {
     followMouse,
     mouseInfluence,
     noiseAmount,
-    distortion
+    distortion,
+    isMounted
   ]);
 
   useEffect(() => {
