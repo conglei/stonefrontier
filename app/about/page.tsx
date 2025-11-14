@@ -6,7 +6,7 @@ import { ExternalLink, Linkedin } from 'lucide-react'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="flex-1 text-white relative">
       <div className="fixed inset-0 z-[1000] w-full h-full pointer-events-none">
         <LightRays
           raysOrigin="right"
@@ -23,7 +23,7 @@ export default function AboutPage() {
         />
       </div>
       <div className="relative z-10 pointer-events-auto">
-        <section className="px-6 py-24 sm:px-10 lg:px-0" style={{ paddingTop: '96px' }}>
+        <section className="px-6 pt-24 sm:px-10 lg:px-0">
           <div className="mx-auto" style={{ maxWidth: '60ch' }}>
             <h1 className="text-4xl sm:text-5xl font-normal text-white mb-8" style={{ letterSpacing: '-0.02em' }}>
               About
@@ -34,21 +34,21 @@ export default function AboutPage() {
                 className="text-base sm:text-lg font-normal text-[#d0d0d0]"
                 style={{ lineHeight: '1.65' }}
               >
-                StoneFrontier explores how humans and AI can work together in a stable and grounded way. The work begins with the belief that understanding is not something to automate away. It is something to support, expand, and deepen.
+                StoneFrontier explores how humans and AI can work together in a stable and grounded way. We believe that understanding is not something to automate away; instead, it is something to support, expand, and deepen.
               </p>
               
               <p 
                 className="text-base sm:text-lg font-normal text-[#d0d0d0]"
                 style={{ lineHeight: '1.65' }}
               >
-                There is a focus on systems that help people see more of the context around their decisions, connect knowledge across time, and move through complexity without losing clarity or agency.
+                We focus on building tools to help you see the context around decisions, follow how information shifts over time, and make sense of things that would otherwise stay scattered or hard to track. AI does the heavy lifting of connecting and surfacing what matters, while you stay in control of meaning and direction.
               </p>
               
               <p 
                 className="text-base sm:text-lg font-normal text-[#d0d0d0]"
                 style={{ lineHeight: '1.65' }}
               >
-                StoneFrontier is founded by Conglei Shi. The company grows directly out of a long path of working across research and product environments, with a consistent interest in how people make sense of information and how tools can help.
+                StoneFrontier was founded by Conglei Shi. The company grows directly out of a long path of working across research and product environments, with a consistent interest in how people make sense of information and how tools can help.
               </p>
               
               <p 
@@ -59,9 +59,9 @@ export default function AboutPage() {
               </p>
               
               <div className="mt-8 space-y-6">
-                <div>
+                <div className="flex flex-wrap items-center justify-start gap-4">
                   <p 
-                    className="text-sm sm:text-base font-medium text-white opacity-80 mb-4"
+                    className="text-sm sm:text-base font-medium text-white opacity-80"
                     style={{ lineHeight: '1.65' }}
                   >
                     Conglei

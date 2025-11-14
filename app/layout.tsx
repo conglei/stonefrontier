@@ -110,7 +110,7 @@ export default function RootLayout({
         <body className="antialiased bg-[#0C0C0C]" style={{ fontFamily: `var(${defaultFontVariable}), ${defaultFontFamily}` }}>
         <PostHogProvider>
           <LandingHeader />
-          <main className="min-h-screen pt-20 bg-[#0C0C0C]">
+          <main className="min-h-screen pt-20 bg-[#0C0C0C] flex flex-col">
             {children}
             <Footer />
             <Analytics />

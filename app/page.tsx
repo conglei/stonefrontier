@@ -47,42 +47,45 @@ export default function Page() {
         <StaggerContainer staggerDelay={0.08} className="space-y-5 sm:space-y-6 mt-4 sm:mt-6">
           <StaggerItem direction="up" distance={20}>
             <BodyText>
-              StoneFrontier builds systems where humans and AI work together in a balanced, stable way.
+              StoneFrontier builds systems where humans and AI work together in a balanced, grounded way.
             </BodyText>
           </StaggerItem>
           <div className="space-y-4">
             <StaggerItem direction="up" distance={20}>
               <BodyText>
-                The human brings interpretation, judgment, and meaning.
+                Humans bring interpretation, judgment, and meaning.
               </BodyText>
             </StaggerItem>
             <StaggerItem direction="up" distance={20}>
               <BodyText>
-                The AI expands what can be seen by surfacing context and connecting information across different places and moments.
+                AI widens what can be seen by surfacing context and making connections between different systems and moments.
               </BodyText>
             </StaggerItem>
           </div>
           <StaggerItem direction="up" distance={20}>
             <BodyText>
-              The value comes from this interaction. Each side strengthens the other.
+              The value comes from this interaction: each side strengthens the other.
             </BodyText>
           </StaggerItem>
           <StaggerItem direction="up" distance={20}>
             <BodyText>
-              When the system is shaped this way, complexity becomes easier to move through.
-              Information that once felt scattered begins to form clarity.
-              There is more space to think, compare, and understand without feeling overwhelmed or replaced.
+              When a system is shaped this way, complexity stops feeling like a maze. Information, previously scattered, comes to clarity. You have more space to think, digest, and understand without feeling overwhelmed or pushed aside.
             </BodyText>
           </StaggerItem>
           <div className="space-y-4 pt-2 sm:pt-4">
             <StaggerItem direction="up" distance={20}>
               <BodyText>
-                The human remains at the center.
+                You stay at the center.
               </BodyText>
             </StaggerItem>
             <StaggerItem direction="up" distance={20}>
               <BodyText>
-                The system extends the range of what can be understood at once.
+                You are in control.
+              </BodyText>
+            </StaggerItem>
+            <StaggerItem direction="up" distance={20}>
+              <BodyText>
+                The system expands your capacity to see, understand, and act.
               </BodyText>
             </StaggerItem>
           </div>
@@ -95,21 +98,15 @@ export default function Page() {
         <StaggerContainer staggerDelay={0.1} className="mt-6">
           <StaggerItem direction="up" distance={20}>
             <ProductCard
-              label="Current release"
               title="Suminos"
               description="StoneFrontier's vision applied to job search. You define your direction; AI expands context and possibility."
-              details="Suminos helps you revise your resume, discover roles that fit, speed up applications with a browser companion under your control, track progress, and prep for interviews. The system surfaces relevant opportunities and connects information across your search while you make the decisions that matter — all in one place."
+              details="Suminos helps you revise your resume, discover roles that fit, and speed up applications with an AI companion you fully control. It helps fill forms, track progress, and prepare for interviews. It gathers information from different sources, finds the signals that matter, and surfaces key insights so you can make the right decisions — all in one place."
               features={[]}
               link={{
                 href: 'https://suminos.ai',
                 text: 'Visit Suminos.ai'
               }}
             />
-          </StaggerItem>
-          <StaggerItem direction="up" distance={20} className="mt-6">
-            <Label variant="normal">
-              More systems are in development.
-            </Label>
           </StaggerItem>
         </StaggerContainer>
       </Section>
@@ -119,8 +116,7 @@ export default function Page() {
         <StaggerContainer staggerDelay={0.1} className="space-y-6 mt-6">
           <StaggerItem direction="up" distance={20}>
             <BodyText size="base">
-            We’re interested in connecting with people who are exploring similar questions about how humans and AI can work together in a grounded and intentional way. If you are building, investing, researching, or simply thinking deeply in this space, we’d be glad to talk. We’re open to collaboration, early partnerships, and shared exploration with people who value clarity, context, and thoughtful design.
-
+            We're interested in connecting with people who are exploring similar questions about how humans and AI can work together in a grounded and thoughtful way. If you're building, investing, researching, or just exploring ideas in this space, we'd be happy to connect.
             </BodyText>
           </StaggerItem>
           <StaggerItem direction="up" distance={20}>
