@@ -27,7 +27,7 @@ export function LandingHeader() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[500] bg-[rgba(12,12,12,0.95)] px-6 py-5 text-white transition-colors duration-500 sm:px-10">
+    <header className="fixed top-0 left-0 right-0 z-[500] bg-[rgba(12,12,12,0.95)] px-6 py-5 text-white transition-colors duration-500 sm:px-10" style={{ paddingTop: 'max(1.25rem, env(safe-area-inset-top))', paddingBottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}>
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <Link
           href="/"

@@ -7,7 +7,7 @@ import { StaggerContainer, StaggerItem, SectionHeading, BodyText, Label, Heading
 
 export default function Page() {
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="flex-1 text-white relative">
       <div className="fixed inset-0 z-[1000] w-full h-full pointer-events-none">
         <LightRays
           raysOrigin="right"
@@ -24,7 +24,7 @@ export default function Page() {
         />
       </div>
       <div className="relative z-10 pointer-events-auto">
-      <section className="hero relative mx-auto flex min-h-[calc(100vh-80px)] max-w-5xl flex-col justify-center px-6 sm:px-10 lg:px-0">
+      <section className="hero relative mx-auto flex min-h-[calc(100dvh-80px)] max-w-5xl flex-col justify-center px-6 sm:px-10 lg:px-0" style={{ minHeight: 'calc(100vh - 80px)' }}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -1,5 +1,5 @@
 import './global.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import { LandingHeader } from './components/LandingHeader'
 
@@ -22,6 +22,14 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { PostHogProvider } from './components/PostHogProvider'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: '#0C0C0C',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -88,6 +96,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  other: {
+    'apple-mobile-web-app-status-bar-style': 'black',
+    'apple-mobile-web-app-capable': 'yes',
+  },
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
@@ -107,10 +119,10 @@ export default function RootLayout({
           merriweather.variable
         )}
       >
-        <body className="antialiased bg-[#0C0C0C]" style={{ fontFamily: `var(${defaultFontVariable}), ${defaultFontFamily}` }}>
+        <body className="antialiased bg-[#0C0C0C]" style={{ fontFamily: `var(${defaultFontVariable}), ${defaultFontFamily}`, minHeight: '-webkit-fill-available' }}>
         <PostHogProvider>
           <LandingHeader />
-          <main className="min-h-screen pt-20 bg-[#0C0C0C] flex flex-col">
+          <main className="min-h-screen pt-20 bg-[#0C0C0C] flex flex-col" style={{ minHeight: '-webkit-fill-available' }}>
             {children}
             <Footer />
             <Analytics />

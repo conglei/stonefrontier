@@ -213,6 +213,21 @@
 html {
   min-width: 360px;
   scroll-behavior: smooth;
+  /* Support for dynamic viewport height on mobile */
+  height: -webkit-fill-available;
+}
+
+/* Mobile viewport height fix - use dvh (dynamic viewport height) when supported */
+@supports (height: 100dvh) {
+  :root {
+    --vh: 1dvh;
+  }
+}
+
+@supports not (height: 100dvh) {
+  :root {
+    --vh: 1vh;
+  }
 }
 
 body {
@@ -225,6 +240,27 @@ body {
   letter-spacing: -0.01em;
   margin: 0;
   padding: 0;
+  /* Mobile viewport height fix */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* Ensure adequate touch targets on mobile (minimum 44x44px) */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Allow smaller touch targets for inline links in text */
+  p a, span a, .prose a {
+    min-height: auto;
+    min-width: auto;
+    display: inline;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -23,7 +23,7 @@ export default function AboutPage() {
         />
       </div>
       <div className="relative z-10 pointer-events-auto">
-        <section className="px-6 pt-24 sm:px-10 lg:px-0">
+        <section className="px-6 pt-24 pb-12 sm:px-10 sm:pb-24 lg:px-0" style={{ paddingTop: 'max(96px, calc(96px + env(safe-area-inset-top)))', paddingBottom: 'max(3rem, calc(3rem + env(safe-area-inset-bottom)))' }}>
           <div className="mx-auto" style={{ maxWidth: '60ch' }}>
             <h1 className="text-4xl sm:text-5xl font-normal text-white mb-8" style={{ letterSpacing: '-0.02em' }}>
               About
