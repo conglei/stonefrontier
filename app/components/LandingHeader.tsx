@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export function LandingHeader() {
@@ -31,9 +32,16 @@ export function LandingHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between">
         <Link
           href="/"
-          className="font-['Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif] text-base font-medium uppercase tracking-[0.35em] no-underline text-white"
+          className="no-underline text-white transition-opacity hover:opacity-80"
         >
-          StoneFrontier
+          <Image
+            src="/logo/logo-stonefrontier.svg"
+            alt="StoneFrontier"
+            width={220}
+            height={16}
+            className="h-auto"
+            priority
+          />
         </Link>
         <nav className="flex items-center gap-2 text-[11px] uppercase tracking-[0.3em]">
           <div className="hidden sm:flex items-center gap-2">
